@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    tools:context=".StartFragment">
+
+
+
+  <ImageView
+      android:layout_width="255dp"
+      android:layout_height="128dp"
+      android:layout_marginTop="125dp"
+      android:layout_gravity="center"
+      android:src="@drawable/img"/>
+
+   <FrameLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="35dp"
+       android:layout_marginEnd="35dp"
+       android:layout_marginTop="138dp"
+       android:background="@drawable/shape"
+       >
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="22dp"
+         android:layout_marginBottom="22dp"
+         android:layout_marginStart="12dp"
+         android:layout_marginEnd="11dp"
+         android:text="@string/startfrag_text"
+         android:fontFamily="@font/roboto_regular"
+         android:textColor="@color/white"
+         />
+
+
+   </FrameLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cornerRadius="15dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:text="@string/let_s_go"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:fontFamily="@font/inter_regular"
+        android:backgroundTint="@color/button_color"
+        />
+
+</LinearLayout>
