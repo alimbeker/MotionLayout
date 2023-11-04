@@ -16,6 +16,9 @@ class CardsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentCardsBinding.inflate(inflater, container, false)
+
+
+
         return binding.root
     }
 
