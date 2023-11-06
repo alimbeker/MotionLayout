@@ -8,16 +8,22 @@ import com.example.motionlayout.databinding.ItemDesignBinding
 
 class ItemAdapter(private val data: List<MyItem>) : RecyclerView.Adapter<ItemAdapter.MyViewHolder>() {
 
-    inner class MyViewHolder(val binding: ItemDesignBinding) : RecyclerView.ViewHolder(binding.root) {
+    var itemClick: ((MyItem) -> Unit)? = null
+
+    inner class MyViewHolder(val binding: ItemDesignBinding, val itemClick: ((MyItem) -> Unit)?) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: MyItem) {
             binding.cardImage.setImageResource(item.imageResId)
             binding.cardText.text = item.text
+
+            itemView.setOnClickListener {
+                itemClick?.invoke(item)
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemBinding = ItemDesignBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return MyViewHolder(itemBinding)
+        return MyViewHolder(itemBinding, itemClick)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
