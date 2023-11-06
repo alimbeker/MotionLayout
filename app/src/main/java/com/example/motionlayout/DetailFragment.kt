@@ -16,7 +16,12 @@ class DetailFragment : Fragment() {
     ): View? {
         binding = FragmentDetailBinding.inflate(inflater, container, false)
 
-
+        binding.imageView.setOnClickListener {
+            binding.imageView.animate()
+                .rotation(360f)
+                .setDuration(500)
+                .start()
+        }
         return binding.root
     }
 
