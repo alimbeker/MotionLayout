@@ -5,11 +5,13 @@
     android:orientation="vertical">
 
     <ImageView
+        android:id="@+id/card_image"
         android:layout_width="181dp"
         android:layout_height="231dp"
         android:src="@drawable/street" />
 
     <TextView
+        android:id="@+id/card_text"
         android:layout_width="181dp"
         android:layout_height="wrap_content"
         android:background="#323232"
