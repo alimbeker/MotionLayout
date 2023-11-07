@@ -15,6 +15,7 @@ import com.example.motionlayout.databinding.ItemDesignBinding
 class CardsFragment : Fragment() {
     private lateinit var binding : FragmentCardsBinding
     private lateinit var itemBinding : ItemDesignBinding
+    private lateinit var adapter: ItemAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,7 +36,7 @@ class CardsFragment : Fragment() {
 
         val recyclerView = binding.recyclerView
 
-        val adapter = ItemAdapter(data)
+        adapter = ItemAdapter(data)
         recyclerView.adapter = adapter
 
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
@@ -45,11 +46,19 @@ class CardsFragment : Fragment() {
         recyclerView.addItemDecoration(offsetDecoration)
 
 
+
+
+        return binding.root
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         adapter.itemClick = {
-          val extras = FragmentNavigatorExtras(
-             itemBinding.cardImage to "image",
-             itemBinding.cardText to "title"
-          )
+            val extras = FragmentNavigatorExtras(
+                itemBinding.cardImage to "image",
+                itemBinding.cardText to "title"
+            )
 
             findNavController().navigate(
                 CardsFragmentDirections.actionCardsFragmentToDetailFragment(),
@@ -57,8 +66,6 @@ class CardsFragment : Fragment() {
             )
         }
 
-
-        return binding.root
     }
 
 
