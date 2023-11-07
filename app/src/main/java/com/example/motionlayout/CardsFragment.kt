@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.FragmentNavigatorExtras
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.motionlayout.databinding.FragmentCardsBinding
 import com.example.motionlayout.databinding.ItemDesignBinding
@@ -52,27 +52,14 @@ class CardsFragment : Fragment() {
           )
 
             findNavController().navigate(
-                CardsFragmentDirections.action_cardsFragment_to_detailFragment
+                CardsFragmentDirections.actionCardsFragmentToDetailFragment(),
+                extras
             )
         }
 
 
         return binding.root
     }
-
-//    private fun detailNavigation(text: String, imageResId: Int) {
-////        val text: String, val imageResId: Int
-//
-//        val fragment = DetailFragment()
-//
-//        val args = Bundle()
-//        args.putInt("image", imageResId)
-//        args.putString("text", text)
-//
-//
-//        fragment.arguments = args
-//        NavHostFragment.findNavController(this).navigate(R.id.action_cardsFragment_to_detailFragment)
-//    }
 
 
 }
