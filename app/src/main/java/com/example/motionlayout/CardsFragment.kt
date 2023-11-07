@@ -55,10 +55,13 @@ class CardsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter.itemClick = {
-
+            val extras = FragmentNavigatorExtras(
+                itemBinding.image to "image",
+                itemBinding.title to "title"
+            )
                findNavController().navigate(
                    CardsFragmentDirections.actionCardsFragmentToDetailFragment(),
-                   adapter.extras!!
+                   extras
                )
 
         }

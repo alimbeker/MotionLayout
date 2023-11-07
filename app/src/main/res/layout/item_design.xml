@@ -5,19 +5,19 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/card_image"
+        android:id="@+id/image"
         android:layout_width="181dp"
         android:layout_height="231dp"
-        android:transitionName="image"
+        android:transitionName="@string/image"
         android:src="@drawable/street" />
 
     <TextView
 
-        android:id="@+id/card_text"
+        android:id="@+id/title"
         android:layout_width="181dp"
         android:layout_height="wrap_content"
         android:background="#323232"
-        android:transitionName="title"
+        android:transitionName="@string/title"
         android:text="Улица"
         android:padding="5dp"
         android:textSize="17sp"
