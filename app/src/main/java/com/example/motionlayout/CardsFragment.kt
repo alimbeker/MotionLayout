@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.motionlayout.databinding.FragmentCardsBinding
+import com.example.motionlayout.databinding.ItemDesignBinding
 
 class CardsFragment : Fragment() {
     private lateinit var binding : FragmentCardsBinding
@@ -41,7 +43,6 @@ class CardsFragment : Fragment() {
 
 
         adapter.itemClick = {
-            NavHostFragment.findNavController(this).navigate(R.id.action_cardsFragment_to_detailFragment)
 
         }
 

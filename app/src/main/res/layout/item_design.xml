@@ -12,6 +12,7 @@
         android:src="@drawable/street" />
 
     <TextView
+
         android:id="@+id/card_text"
         android:layout_width="181dp"
         android:layout_height="wrap_content"
