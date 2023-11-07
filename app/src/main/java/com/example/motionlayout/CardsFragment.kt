@@ -7,18 +7,21 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.motionlayout.databinding.FragmentCardsBinding
 import com.example.motionlayout.databinding.ItemDesignBinding
 
 class CardsFragment : Fragment() {
     private lateinit var binding : FragmentCardsBinding
+    private lateinit var itemBinding : ItemDesignBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentCardsBinding.inflate(inflater, container, false)
+        itemBinding = ItemDesignBinding.inflate(inflater,container, false)
 
         val data = listOf(
             MyItem("Улица", R.drawable.street),
@@ -43,7 +46,14 @@ class CardsFragment : Fragment() {
 
 
         adapter.itemClick = {
+          val extras = FragmentNavigatorExtras(
+             itemBinding.cardImage to "image",
+             itemBinding.cardText to "title"
+          )
 
+            findNavController().navigate(
+                CardsFragmentDirections.action_cardsFragment_to_detailFragment
+            )
         }
 
 
