@@ -59,11 +59,10 @@ class CardsFragment : Fragment() {
                 itemBinding.image to "image",
                 itemBinding.title to "title"
             )
-               findNavController().navigate(
-                   CardsFragmentDirections.actionCardsFragmentToDetailFragment(),
-                   extras
-               )
-
+            findNavController().navigate(
+                CardsFragmentDirections.actionCardsFragmentToDetailFragment(),
+                extras
+            )
         }
 
     }

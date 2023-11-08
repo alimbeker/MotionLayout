@@ -19,7 +19,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
             android:layout_marginStart="27dp"
-            android:text="New york"
             android:transitionName="@string/title"
             android:fontFamily="@font/roboto_bold"
             android:textColor="@color/black"
@@ -52,7 +51,7 @@
             android:layout_height="425dp"
             android:transitionName="@string/image"
             android:scaleType="centerCrop"
-            android:src="@drawable/street" />
+        />
 
     </androidx.cardview.widget.CardView>
 
