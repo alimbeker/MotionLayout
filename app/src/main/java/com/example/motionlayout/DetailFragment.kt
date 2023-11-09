@@ -12,9 +12,8 @@ import java.util.concurrent.TimeUnit
 
 class DetailFragment : Fragment() {
     private lateinit var binding : FragmentDetailBinding
-    private val args: DetailFragmentArgs by navArgs()
-    private val imageId: Int by args.imageId
-    private val title: String by args.title
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,8 +27,9 @@ class DetailFragment : Fragment() {
                 .setDuration(500)
                 .start()
         }
-        binding.image = imageId
-        binding.title.text = title
+        val args = DetailFragmentArgs.fromBundle(requireArguments())
+        binding.image.setImageResource(args.imageId)
+        binding.title.text = args.title
 
         return binding.root
     }
