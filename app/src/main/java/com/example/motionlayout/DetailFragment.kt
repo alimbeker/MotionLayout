@@ -6,11 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
 import com.example.motionlayout.databinding.FragmentDetailBinding
 import java.util.concurrent.TimeUnit
 
 class DetailFragment : Fragment() {
     private lateinit var binding : FragmentDetailBinding
+    private val args: DetailFragmentArgs by navArgs()
+    private val imageId: Int by args.imageId
+    private val title: String by args.title
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,6 +28,9 @@ class DetailFragment : Fragment() {
                 .setDuration(500)
                 .start()
         }
+        binding.image = imageId
+        binding.title.text = title
+
         return binding.root
     }
 

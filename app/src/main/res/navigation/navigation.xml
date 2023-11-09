@@ -27,5 +27,13 @@
         android:id="@+id/detailFragment"
         android:name="com.example.motionlayout.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="imageId"
+            app:argType="integer" />
+
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
 </navigation>
