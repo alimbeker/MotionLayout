@@ -56,14 +56,13 @@ class CardsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         adapter.itemClick = {
-            val extras = FragmentNavigatorExtras(
-                itemBinding.image to "image",
-                itemBinding.title to "title"
-            )
-            findNavController().navigate(
-                CardsFragmentDirections.actionCardsFragmentToDetailFragment(it.imageResId,it.text),
-                extras
-            )
+
+            adapter.extras?.let { it1 ->
+                findNavController().navigate(
+                    CardsFragmentDirections.actionCardsFragmentToDetailFragment(it.imageResId,it.text),
+                    it1
+                )
+            }
         }
 
     }

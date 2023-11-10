@@ -11,13 +11,21 @@ import com.example.motionlayout.databinding.ItemDesignBinding
 class ItemAdapter(private val data: List<MyItem>) : RecyclerView.Adapter<ItemAdapter.MyViewHolder>() {
 
     var itemClick: ((MyItem) -> Unit)? = null
-//    var extras: FragmentNavigator.Extras? = null
+
+    var extras: FragmentNavigator.Extras? = null
 
     inner class MyViewHolder(val binding: ItemDesignBinding, val itemClick: ((MyItem) -> Unit)?) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: MyItem) {
             binding.image.setImageResource(item.imageResId)
             binding.title.text = item.text
 
+            extras = FragmentNavigatorExtras(
+                binding.image to "imageResId",
+                binding.title to "text"
+            )
+
+            binding.image.transitionName = item.imageResId.toString()
+            binding.title.transitionName = item.text
             itemView.setOnClickListener {
 
                 itemClick?.invoke(item)
