@@ -55,14 +55,14 @@ class CardsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter.itemClick = {
+        adapter.itemClick = { it1, it2 ->
 
-            adapter.extras?.let { it1 ->
+
                 findNavController().navigate(
-                    CardsFragmentDirections.actionCardsFragmentToDetailFragment(it.imageResId,it.text),
-                    it1
+                    CardsFragmentDirections.actionCardsFragmentToDetailFragment(it1.imageResId,it1.text),
+                    it2
                 )
-            }
+
         }
 
     }
